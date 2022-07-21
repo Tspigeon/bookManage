@@ -1,0 +1,14 @@
+
+#u46-s {
+    border-top-style: solid;
+    border-block-color: skyblue;
+    border-width: 1px;
+    position: absolute;
+    left: 0px;
+    top: 200px;
+}
+
+#change {
+    position: absolute;
+    margin-left: 50px;
+}

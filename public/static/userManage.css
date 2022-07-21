@@ -1,0 +1,100 @@
+#u39_div {
+  border-width: 0px;
+  position: absolute;
+  left: 0px;
+  top: 9px;
+  width: 1536px;
+  height: 60px;
+  background: inherit;
+  background-color: rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(228, 228, 228, 1);
+  border-radius: 0px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-align: left;
+}
+
+#u39 {
+  border-width: 0px;
+  position: absolute;
+  left: 0px;
+  top: 120px;
+  width: 1520px;
+  height: 60px;
+  text-align: left;
+}
+
+#u41 {
+  border-width: 0px;
+  position: absolute;
+  left: -30px;
+  top: 20px;
+  width: 120px;
+  height: 60px;
+  font-family: "微软雅黑";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  text-align: right;
+}
+
+#u102 {
+  border-width: 0px;
+  position: absolute;
+  left: 755px;
+  top: 20px;
+  width: 120px;
+  height: 60px;
+  font-family: "微软雅黑";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  text-align: right;
+}
+
+#u43 {
+  position: absolute;
+}
+
+#u44 {
+  position: absolute;
+}
+
+#u45 {
+  position: absolute;
+  left: 1215px;
+  top: 15px;
+  width: 114px;
+  height: 35px;
+}
+
+#u45exit {
+  position: absolute;
+  left: 1340px;
+  top: 15px;
+  width: 114px;
+  height: 35px;
+}
+
+#u46 {
+  border-top-style: solid;
+  border-block-color: skyblue;
+  border-width: 1px;
+  position: absolute;
+  left: 0px;
+  top: 200px;
+}
+
+.opbtn {
+  border-style: none;
+  color: #1abc9c;
+  background-color: #ffffff;
+}
+
+.inBtn {
+  width: 90%;
+}
