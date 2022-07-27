@@ -3,14 +3,14 @@
     <!-- 筛选的top -->
     <SelectTop></SelectTop>
     <!-- 筛选框 -->
-    <filterMid></filterMid>
+    <filterMid :flag="flag"></filterMid>
 
     <!-- 结果表单，操作页面插入span -->
     <el-table
       :data="$store.state.bookData"
       height="500"
       style="width: 100%"
-      id="u46-s"
+      id="u46"
     >
       <!-- 序号列 -->
       <el-table-column prop="num" label="序号" width="90"></el-table-column>
@@ -35,7 +35,7 @@
       <!-- 学院或个人名称列 -->
       <el-table-column prop="name" label="学院或个人名称" width="167">
       </el-table-column>
-      
+
       <!-- 状态列 -->
       <el-table-column prop="statment" label="状态" width="75">
         <!-- 插槽处理状态下拉栏 -->
@@ -59,7 +59,7 @@
           </button>
         </template>
       </el-table-column>
-      
+
       <!-- 取件时间 -->
       <el-table-column prop="checkDate" label="取件时间" width="167">
       </el-table-column>
@@ -81,7 +81,8 @@ export default {
   },
   data() {
     return {
-      //数据存储放入vuex
+      //else数据存储放入vuex
+      flag: 1,//组件标识符
     };
   },
 
@@ -91,7 +92,13 @@ export default {
     //请求数据
   },
 
-  mounted() {},
+  mounted() {
+    //切换页面时重置筛选属性
+    this.$store.state.name = ''
+    this.$store.state.bookName = ''
+    this.$store.state.period = ''
+    this.$store.state.statment = ''
+  },
 
   methods: {
     change(row) {

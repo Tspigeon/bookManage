@@ -8,16 +8,20 @@
         >
       </el-button>
 
-      <el-button id="u1">
+      <el-button class="u1">
         <!-- 由路由实现高亮active效果 active-class -->
         <router-link active-class="active" to="storeManage"
-          >仓库管理页面</router-link
-        >
+          >仓库管理页面</router-link>
       </el-button>
 
-      <el-button style="margin-left: 100px">
+      <el-button class="u1">
         <router-link active-class="active" to="subscribeManage"
           >订阅系统页面</router-link>
+      </el-button>
+
+      <el-button class="u1">
+        <router-link active-class="active" to="pwdManage"
+          >密码申诉页面</router-link>
       </el-button>
     </div>
 
@@ -48,5 +52,15 @@ export default {
 .el-icon-circle-close:before {
   content: "\e79d" !important;
   font-size: 18px;
+}
+
+/* 数据列表样式 */
+#u46 {
+  border-top-style: solid;
+  border-block-color: skyblue;
+  border-width: 1px;
+  position: absolute;
+  left: 0px;
+  top: 200px;
 }
 </style>

@@ -1,32 +1,7 @@
 <template>
   <div>
     <!-- top方框--预留位置做导航 -->
-    <!-- <div
-      id="u36"
-      class="ax_default"
-      data-label="灰色背景"
-      style="left: 0px; width: 1520px"
-    >
-      <div
-        id="u36_state0"
-        class="panel_state"
-        data-label="State1"
-        style="width: 1520px"
-      >
-        <div
-          id="u36_state0_content"
-          class="panel_state_content"
-          style="margin-left: 0px"
-        ></div>
-      </div>
-    </div>
-    <div id="u37" class="ax_default box_1" data-label="页面标题">
-      <div id="u37_div" class=""></div> -->
-    <!-- Unnamed () -->
-    <!-- <div id="u38" class="text" style="visibility: inherit">
-        <p id="cache4"><span id="cache5">用户列表</span></p>
-      </div>
-    </div> -->
+    <commonHeader></commonHeader>
 
     <!-- 筛选的top -->
     <SelectTop></SelectTop>
@@ -143,10 +118,11 @@
 </template>
 
 <script>
+import commonHeader from "@/components/commonHeader.vue";
 import SelectTop from "../components/selectTop.vue";
 export default {
   name: "UserManage",
-  components: { SelectTop },
+  components: { SelectTop, commonHeader },
   data() {
     return {
       subarr: [],
@@ -192,7 +168,6 @@ export default {
       let isdel = confirm("是否确认删除该用户？");
       //确认页面
       if (isdel) {
-        console.log(row);
         this.$store.state.userList = this.$store.state.userList.filter((item) => {
           return item.sid != row.sid;
         });

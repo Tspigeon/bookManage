@@ -6,7 +6,7 @@
         v-model="$store.state.name"
         placeholder="名称"
         id="u43-s"
-        style="top: -1px; width: 114px; left: 85px"
+        style="top: -5px; width: 114px; left: 85px"
         clearable
       ></el-input>
 
@@ -15,7 +15,7 @@
         v-model="$store.state.bookName"
         placeholder="期 刊 名 称"
         id="u44-s"
-        style="top: -1px; width: 200px; left: 241px"
+        style="top: -5px; width: 200px; left: 241px"
         clearable
       ></el-input>
 
@@ -24,19 +24,21 @@
         v-model="$store.state.period"
         placeholder="期数"
         id="u43-2"
-        style="top: -1px; width: 140px; left: 368px"
+        style="top: -5px; width: 140px; left: 368px"
         clearable
       ></el-input>
 
-      <span id="u102-2">取件状态：</span>
-      <el-input
+      <span id="u102-2" v-show="flag">取件状态：</span>
+      <el-select
+        v-show="flag"
         v-model="$store.state.statment"
-        placeholder="取件状态"
         id="u44-2"
-        style="top: -1px; width: 200px; left: 536px"
-        clearable
+        style="top: 12px; width: 200px; left: 536px"
+        placeholder="取件状态"
       >
-      </el-input>
+        <el-option value="已取"></el-option>
+        <el-option value="未取"></el-option>
+      </el-select>
 
       <!-- 添加点击事件 -->
       <el-button type="primary" round id="u45-s" @click="search"
@@ -50,10 +52,9 @@
 </template>
 
 <script>
-
 export default {
   name: "filterMid",
-
+  props: ["flag"],
   data() {
     return {
       //其他数据存储已放入vuex
@@ -61,18 +62,33 @@ export default {
     };
   },
 
-  mounted() {
-    // bookData的副本数组,从state中拿到
-    this.subarr = this.$store.state.bookData;
+  computed: {
+    Flag() {
+      return this.flag;
+    },
   },
+
+  watch: {
+    Flag: {
+      immediate: true,
+      handler() {
+        //监视Flag，Flag改变时改变subarr数组,name,bookName,period
+        this.subarr = this.Flag
+          ? this.$store.state.bookData
+          : this.$store.state.bookList;
+      },
+    },
+  },
+
+  mounted() {},
 
   methods: {
     //vuex接管数据操作
     search() {
-      this.$store.dispatch("srh", this.subarr);
+      this.$store.dispatch("srh", { subarr: this.subarr, flag: this.Flag });
     },
     exitSearch() {
-      this.$store.dispatch("ex_Srh", this.subarr);
+      this.$store.dispatch("ex_Srh", { subarr: this.subarr, flag: this.Flag });
     },
   },
 };

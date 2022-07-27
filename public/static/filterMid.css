@@ -103,8 +103,6 @@
 }
 
 #u44-2 {
-    position: absolute;
-    height: 35px;
     text-align: left;
 }
 
@@ -122,4 +120,27 @@
     top: 15px;
     width: 114px;
     height: 35px;
+}
+
+.selectAll {
+    position: absolute;
+    top: 670px;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(110, 125, 131, 0.2);
+}
+
+
+
+.select {
+    position: absolute;
+    top: 10px;
+    left: 70px;
+}
+
+.checkOne {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    zoom: 200%;
 }
